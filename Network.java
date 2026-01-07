@@ -100,6 +100,9 @@ public class Network {
                 recommendedUser = currentUser;
             }
         }
+        if (recommendedUser == null) {
+            return "null";
+        }
         return recommendedUser.getName();
     }
 
@@ -110,12 +113,12 @@ public class Network {
     public String mostPopularUser() {
         User mostPopular = null;
         int mostFollowees = -1;
-        for (User user: users) {
+        for (User user : users) {
             if (user == null) {
                 continue;
             }
             int userfollowees = followeeCount(user.getName());
-            if (userfollowees >mostFollowees){
+            if (userfollowees > mostFollowees) {
                 mostFollowees = userfollowees;
                 mostPopular = user;
             }
@@ -133,14 +136,14 @@ public class Network {
      */
     private int followeeCount(String name) {
         int count = 0;
-        for (User user: users) {
+        for (User user : users) {
             if (user == null) {
                 continue;
             }
             if (user.getName() == name) {
                 continue;
             }
-            if (user.follows(name) == true){
+            if (user.follows(name) == true) {
                 count++;
             }
         }
