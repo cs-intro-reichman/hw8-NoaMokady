@@ -55,17 +55,17 @@ public class Network {
      */
     public boolean addUser(String name) {
         if (users[users.length - 1] != null) {
-            System.out.println("The network is full. Therefore, " + name + " was not added.");
+            // System.out.println("The network is full. Therefore, " + name + " was not added.");
             return false;
         }
         if (getUser(name) != null) {
-            System.out.println("This user already exits in the network " + name + ". Therefore, " +
-                    name + " was not added again.");
+            // System.out.println("This user already exits in the network " + name + ". Therefore, " +
+            //         name + " was not added again.");
             return false;
         }
         users[userCount] = new User(name);
         userCount++;
-        System.out.println("Added " + name + "to the network successfully.");
+        // System.out.println("Added " + name + "to the network successfully.");
         return true;
     }
 
