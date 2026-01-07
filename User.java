@@ -65,19 +65,22 @@ public class User {
      */
     public boolean addFollowee(String name) {
         if (follows[follows.length - 1] != null) {
-            // System.out.println("The follows list is full. Therefore, " + name + " was not
-            // added.");
+            System.out.println("The follows list is full. Therefore, " + name + " was not added.");
             return false;
         }
-        if (follows(name) == true || this.name == name) {
-            // System.out.println("This user already follows " + name + ". Therefore, " +
-            // name + " was not added again.");
+        if (follows(name) == true) {
+            System.out.println("This user already follows " + name + ". Therefore, " +
+                    name + " was not added again.");
+            return false;
+        }
+        if (this.name == name) {
+            System.out.println("A user cannot follow himself/herself.");
             return false;
         }
 
         follows[fCount] = name;
         fCount++;
-        // System.out.println("Added " + name + " successfully.");
+        System.out.println("Added " + name + " successfully.");
         return true;
     }
 

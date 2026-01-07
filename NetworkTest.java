@@ -47,16 +47,5 @@ public class NetworkTest {
         System.out.println("The most popular user is: " + net.mostPopularUser());
 
         System.out.println("\nAll Network class tests completed.");
-
-        ////////////////
-        Network network = new Network(5, true);
-        String expected = "false";
-        String actual = "";
-        try {
-            actual += network.addFollowee("Baz", "Baz");
-        } catch (Exception e) {
-            actual = TesterMessagesEnum.ERROR + e.getMessage();
-        }
-        System.out.println(actual);
     }
 }
