@@ -126,6 +126,9 @@ public class Network {
                 mostPopular = user;
             }
         }
+        if (mostPopular == null) {
+            return "null";
+        }
         return mostPopular.getName();
     }
 

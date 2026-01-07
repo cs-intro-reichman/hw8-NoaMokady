@@ -48,16 +48,15 @@ public class NetworkTest {
 
         System.out.println("\nAll Network class tests completed.");
 
-        // ///////////////////////////////
-        // System.out.println("nowwwwwwwww");
-        // Network network = new Network(5);
-        // String expected = "Network:";
-        // String actual = "";
-        // try {
-        //     actual += network.toString();
-        // } catch (Exception e) {
-        //     actual = TesterMessagesEnum.ERROR + e.getMessage();
-        // }
-        // System.out.println(actual);
+        ////////////////
+        Network network = new Network(5, true);
+        String expected = "false";
+        String actual = "";
+        try {
+            actual += network.addFollowee("Baz", "Baz");
+        } catch (Exception e) {
+            actual = TesterMessagesEnum.ERROR + e.getMessage();
+        }
+        System.out.println(actual);
     }
 }
